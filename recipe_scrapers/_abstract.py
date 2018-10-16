@@ -30,8 +30,8 @@ class AbstractScraper():
             'total_time',
             'instructions',
             'ingredients',
-            'rating'
-            'num_ratings,
+            'rating',                 # Added by IsaiahData on 2018-10-16
+            'num_ratings',            # Added by IsaiahData on 2018-10-16
             'links'
         ]
         if name in decorated_methods:
@@ -86,10 +86,10 @@ class AbstractScraper():
     def instructions(self):
         raise NotImplementedError("This should be implemented.")
         
-    def rating(self):
+    def rating(self):             # Added by IsaiahData on 2018-10-16
         raise NotImplementedError("This should be implemented.")
         
-    def num_ratings(self):
+    def num_ratings(self):        # Added by IsaiahData on 2018-10-16
         raise NotImplementedError("This should be implemented.")
         
     def links(self):

@@ -44,13 +44,13 @@ class AllRecipes(AbstractScraper):
             for instruction in instructions
         ]
     
-    def rating(self):
+    def rating(self):                     # Added by IsaiahData on 2018-10-16
         rating = soup.find_all(
             'div', 
             {'class': 'rating-stars'}
         )[0]['data-ratingstars']
             
-    def num_ratings(self):
+    def num_ratings(self):                # Added by IsaiahData on 2018-10-16
         num_ratings = soup.find_all(
             'h4', 
             {'class': 'helpful-header'}
