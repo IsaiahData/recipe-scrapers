@@ -30,6 +30,8 @@ class AbstractScraper():
             'total_time',
             'instructions',
             'ingredients',
+            'rating'
+            'num_ratings,
             'links'
         ]
         if name in decorated_methods:
@@ -83,7 +85,13 @@ class AbstractScraper():
 
     def instructions(self):
         raise NotImplementedError("This should be implemented.")
-
+        
+    def rating(self):
+        raise NotImplementedError("This should be implemented.")
+        
+    def num_ratings(self):
+        raise NotImplementedError("This should be implemented.")
+        
     def links(self):
         invalid_href = ('#', '')
         links_html = self.soup.findAll('a', href=True)

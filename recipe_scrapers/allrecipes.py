@@ -42,4 +42,16 @@ class AllRecipes(AbstractScraper):
         return '\n'.join([
             normalize_string(instruction.get_text())
             for instruction in instructions
-        ])
+        ]
+    
+    def rating(self):
+        rating = soup.find_all(
+            'div', 
+            {'class': 'rating-stars'}
+        )[0]['data-ratingstars']
+            
+    def num_ratings(self):
+        num_ratings = soup.find_all(
+            'h4', 
+            {'class': 'helpful-header'}
+        )[0].get_text()
