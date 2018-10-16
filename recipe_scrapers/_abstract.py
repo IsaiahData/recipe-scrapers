@@ -42,6 +42,10 @@ class AbstractScraper():
             to_return = []
         if name == 'links':
             to_return = []
+        if name == 'rating':
+            to_return = 'n/a'
+        if name == 'num_ratings':
+            to_return = 'n/a'
 
         if to_return is not None:
             return on_exception_return(to_return)(object.__getattribute__(self, name))
