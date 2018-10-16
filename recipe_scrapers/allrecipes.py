@@ -45,9 +45,9 @@ class AllRecipes(AbstractScraper):
         ]
     
     def rating(self):                     # Added by IsaiahData on 2018-10-16
-        rating = soup.find_all('div', {'class': 'rating-stars'})[0]['data-ratingstars']
+        rating = self.soup.find('div', {'class': 'rating-stars'})[0]['data-ratingstars']
         return rating
             
     def num_ratings(self):                # Added by IsaiahData on 2018-10-16
-        num_ratings = soup.find_all('h4', {'class': 'helpful-header'})[0].get_text()[:-8]
+        num_ratings = self.soup.find('h4', {'class': 'helpful-header'})[0].get_text()[:-8]
         return num_ratings
